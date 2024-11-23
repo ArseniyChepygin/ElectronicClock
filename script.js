@@ -5,7 +5,7 @@ const localTimeZone = document.getElementById('localTimeZone')
 function updateClock(){
     const now = new Date();
     const timezone2 = parseInt(selecttimezone.value, 10);
-    const hours =  String(now.getUTCHours() + timezone2).padStart(2, '0');
+    const hours =  String((now.getUTCHours() + timezone2) % 24).padStart(2, '0');
     const minutes = String(now.getUTCMinutes()).padStart(2, '0');
     const seconds = String(now.getUTCSeconds()).padStart(2, '0');
 
